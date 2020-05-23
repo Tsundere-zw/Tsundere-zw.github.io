@@ -244,6 +244,60 @@ place-items属性是align-items属性和justify-items属性的合并简写形式
 ![alt](/images/grid36.png)
 
 <p>下面是一个例子。<br><img alt="alt" class="post-img b-lazy" href="/images/grid37.png" data-src="/images/grid37.png"><br>如果省略第二个值，则浏览器认为与第一个值相等。</p>
+<p>3.7<br>justify-content 属性，<br>align-content 属性，<br>place-content 属性</p>
+<p>justify-content属性是整个内容区域在容器里面的水平位置（左中右），align-content属性是整个内容区域的垂直位置（上中下）。<br><img alt="alt" class="post-img b-lazy" href="/images/grid38.png" data-src="/images/grid38.png"><br>这两个属性的写法完全相同，都可以取下面这些值。（下面的图都以justify-content属性为例，align-content属性的图完全一样，只是将水平方向改成垂直方向。）<br><img alt="alt" class="post-img b-lazy" href="/images/grid39.png" data-src="/images/grid39.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid40.png" data-src="/images/grid40.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid41.png" data-src="/images/grid41.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid42.png" data-src="/images/grid42.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid43.png" data-src="/images/grid43.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid44.png" data-src="/images/grid44.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid45.png" data-src="/images/grid45.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png"><br>place-content属性是align-content属性和justify-content属性的合并简写形式。<br><img alt="alt" class="post-img b-lazy" href="/images/grid46.png" data-src="/images/grid46.png"><br>下面是一个例子。<br><img alt="alt" class="post-img b-lazy" href="/images/grid47.png" data-src="/images/grid47.png"><br>如果省略第二个值，浏览器就会假定第二个值等于第一个值。</p>
+<p>3.8<br>grid-auto-columns 属性，<br>grid-auto-rows 属性</p>
+<p>有时候，一些项目的指定位置，在现有网格的外部。比如网格只有3列，但是某一个项目指定在第5行。这时，浏览器会自动生成多余的网格，以便放置项目。</p>
+<p>grid-auto-columns属性和grid-auto-rows属性用来设置，浏览器自动创建的多余网格的列宽和行高。它们的写法与grid-template-columns和grid-template-rows完全相同。如果不指定这两个属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。</p>
+<p><a href="https://jsbin.com/sayuric/edit?css,output" target="_blank" rel="noopener">下面例子</a>里面，划分好的网格是3行 x 3列，但是，8号项目指定在第4行，9号项目指定在第5行。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid48.png" data-src="/images/grid48.png"><br>上面代码指定新增的行高统一为50px（原始的行高为100px）。</p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032525.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032525.png">
+
+<p>3.9<br>grid-template 属性，<br>grid 属性</p>
+<p>grid-template属性是grid-template-columns、grid-template-rows和grid-template-areas这三个属性的合并简写形式。</p>
+<p>grid属性是grid-template-rows、grid-template-columns、grid-template-areas、 grid-auto-rows、grid-auto-columns、grid-auto-flow这六个属性的合并简写形式。</p>
+<p>从易读易写的角度考虑，还是建议不要合并属性，所以这里就不详细介绍这两个属性了。</p>
+<p>四、项目属性</p>
+<hr>
+<p>下面这些属性定义在项目上面。</p>
+<p>4.1<br>grid-column-start 属性，<br>grid-column-end 属性，<br>grid-row-start 属性，<br>grid-row-end 属性</p>
+<p>项目的位置是可以指定的，具体方法就是指定项目的四个边框，分别定位在哪根网格线。<br><img alt="alt" class="post-img b-lazy" href="/images/grid49.png" data-src="/images/grid49.png"><br><img alt="alt" class="post-img b-lazy" href="/images/grid50.png" data-src="/images/grid50.png"><br><a href="https://jsbin.com/yukobuf/edit?css,output" target="_blank" rel="noopener">上面代码</a>指定，1号项目的左边框是第二根垂直网格线，右边框是第四根垂直网格线。</p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032526.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032526.png">
+上图中，只指定了1号项目的左右边框，没有指定上下边框，所以会采用默认位置，即上边框是第一根水平网格线，下边框是第二根水平网格线。
+
+<p>除了1号项目以外，其他项目都没有指定位置，由浏览器自动布局，这时它们的位置由容器的grid-auto-flow属性决定，这个属性的默认值是row，因此会”先行后列”进行排列。读者可以把这个属性的值分别改成column、row dense和column dense，看看其他项目的位置发生了怎样的变化。</p>
+<p><a href="https://jsbin.com/nagobey/edit?html,css,output" target="_blank" rel="noopener">下面例子</a>是指定四个边框位置的效果。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid51.png" data-src="/images/grid51.png"></p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032527.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032527.png">
+
+<p>这四个属性的值，除了指定为第几个网格线，还可以指定为网格线的名字。<br><img alt="alt" class="post-img b-lazy" href="/images/grid52.png" data-src="/images/grid52.png"><br>上面代码中，左边框和右边框的位置，都指定为网格线的名字。</p>
+<p>这四个属性的值还可以使用span关键字，表示”跨越”，即左右边框（上下边框）之间跨越多少个网格。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid53.png" data-src="/images/grid53.png"><br><a href="https://jsbin.com/hehumay/edit?html,css,output" target="_blank" rel="noopener">上面代码</a>表示，1号项目的左边框距离右边框跨越2个网格。</p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032528.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032528.png">
+这与<a href="https://jsbin.com/mujihib/edit?html,css,output" target="_blank" rel="noopener">下面的代码</a>效果完全一样。
+![alt](/images/grid54.png)
+
+<p>使用这四个属性，如果产生了项目的重叠，则使用z-index属性指定项目的重叠顺序。</p>
+<p>4.2<br>grid-column 属性，<br>grid-row 属性</p>
+<p>grid-column属性是grid-column-start和grid-column-end的合并简写形式，grid-row属性是grid-row-start属性和grid-row-end的合并简写形式。<br><img alt="alt" class="post-img b-lazy" href="/images/grid55.png" data-src="/images/grid55.png"><br>下面是一个例子。<br><img alt="alt" class="post-img b-lazy" href="/images/grid56.png" data-src="/images/grid56.png"><br>上面代码中，项目item-1占据第一行，从第一根列线到第三根列线。</p>
+<p>这两个属性之中，也可以使用span关键字，表示跨越多少个网格。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid57.png" data-src="/images/grid57.png"><br><a href="https://jsbin.com/volugow/edit?html,css,output" target="_blank" rel="noopener">上面代码</a>项目item-1占据的区域，包括第一行 + 第二行、第一列 + 第二列。</p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032529.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032529.png">
+斜杠以及后面的部分可以省略，默认跨越一个网格。
+
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid58.png" data-src="/images/grid58.png"><br>上面代码中，项目item-1占据左上角第一个网格。</p>
+<p>4.3 grid-area 属性</p>
+<p>grid-area属性指定项目放在哪一个区域。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid59.png" data-src="/images/grid59.png"><br><a href="https://jsbin.com/qokexob/edit?css,output" target="_blank" rel="noopener">上面代码</a>中，1号项目位于e区域，效果如下图。</p>
+<img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032530.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032530.png">
+grid-area属性还可用作grid-row-start、grid-column-start、grid-row-end、grid-column-end的合并简写形式，直接指定项目的位置。
+
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid60.png" data-src="/images/grid60.png"><br>下面是一个<a href="https://jsbin.com/duyafez/edit?css,output" target="_blank" rel="noopener">例子</a><br><img alt="alt" class="post-img b-lazy" href="/images/grid61.png" data-src="/images/grid61.png"></p>
+<p>4.4<br>justify-self 属性，<br>align-self 属性，<br>place-self 属性</p>
+<p>justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。</p>
+<p>align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。<br><img alt="alt" class="post-img b-lazy" href="/images/grid62.png" data-src="/images/grid62.png"><br>这两个属性都可以取下面四个值。<br><img alt="alt" class="post-img b-lazy" href="/images/grid63.png" data-src="/images/grid63.png"><br>下面是justify-self: start的例子。<br><img alt="alt" class="post-img b-lazy" href="/images/grid64.png" data-src="/images/grid64.png"><br><img alt class="post-img b-lazy" href="https://www.wangbase.com/blogimg/asset/201903/bg2019032532.png" data-src="https://www.wangbase.com/blogimg/asset/201903/bg2019032532.png"><br>place-self属性是align-self属性和justify-self属性的合并简写形式。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/images/grid65.png" data-src="/images/grid65.png"><br>下面是一个例子。<br><img alt="alt" class="post-img b-lazy" href="/images/grid66.png" data-src="/images/grid66.png"><br>如果省略第二个值，place-self属性会认为这两个值相等。</p>
+<p>总结：相对于flex一维布局 grid二维布局更加的全面 使用的范围更加的广 但grid布局的浏览器兼容性需要处理，需要版本较高的浏览器。（建议使用IE9以上，谷歌、火狐等浏览器）</p>
 
                 </div>
             </section>
