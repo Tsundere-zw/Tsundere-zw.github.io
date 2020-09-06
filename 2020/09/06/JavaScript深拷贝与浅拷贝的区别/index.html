@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Hello World | WeiGe</title>
+	<title>JavaScript深拷贝与浅拷贝的区别 | WeiGe</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -40,14 +40,14 @@
 
 	<meta property="og:site_name" content="WeiGe">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Hello World | WeiGe">
+	<meta property="og:title" content="JavaScript深拷贝与浅拷贝的区别 | WeiGe">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/2020/05/22/hello-world/">
+	<meta property="og:url" content="http://yoursite.com/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
 	
-	<meta property="article:published_time" content="2020-05-22T11:05:11+08:00"> 
+	<meta property="article:published_time" content="2020-09-06T09:09:62+08:00"> 
 	<meta property="article:author" content="John Wei">
-	<meta property="article:published_first" content="WeiGe, /2020/05/22/hello-world/">
+	<meta property="article:published_first" content="WeiGe, /2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/">
 	
 </head>
 <body class="post-template">
@@ -126,33 +126,41 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2020-05-22T03:11:57.111Z" itemprop="datePublished">
-                    2020-05-22
+                <time class="post-full-meta-date" datetime="2020-09-06T01:41:30.628Z" itemprop="datePublished">
+                    2020-09-6
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </section>
-            <h1 class="post-full-title">Hello World</h1>
+            <h1 class="post-full-title">JavaScript深拷贝与浅拷贝的区别</h1>
         </header>
         <article class="post-full no-image">
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+                    <h3>原因及区别</h3>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+<p>我们都知道js中有两种数据类型,一种是基本数据类型,一种是引用数据类型,基本数据类型是按值访问的,即在操作基本类型的变量时,是直接修改变量的值,而引用数据类型的值是按引用访问的,什么叫按引用访问的呢?js的引用类型,也叫对象类型,是保存在内存中的,而在js中又无法直接操作内存中的对象,实际上操作的是对象的引用,因此在引用类型变量在进行复制操作时,并不是对对象值的直接复制,而是将对象的引用复制给了另一个变量,实际上变量指向的是同一个内存地址中对象的值,因此只要改变其中一个对象变量的值另外一个就会一起改变,这就是我们常说的浅拷贝。而在深拷贝中,会开辟一个新的内存地址用来存放新对象的值,两个对象对应两个不同的内存地址 ,修改一个对象并不会对另外一个对象产生影响。接下来就让我们更细致的探究js中的深浅拷贝。</p>
+<h3>浅拷贝</h3>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<p>实现浅拷贝的方法有多种,让我们先来看看js中提供的几个自带方法实现浅拷贝的的例子:</p>
+<p>Object.assign()方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。注意:Object.assign()拷贝的是属性值,假如源对象的属性值是一个指向对象的引用,它也只拷贝那个引用值,来看个例子:</p>
+<p><img alt="alt" class="post-img b-lazy" href="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image1.png" data-src="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image1.png"></p>
+<p>如上面例子,当拷贝的源对象的属性值是一个对象时,拷贝的只是对象的引用值,因此当修改属性值的时候两个对象的属性值都会发生更新</p>
+<p>Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+<p><img alt="alt" class="post-img b-lazy" href="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image2.png" data-src="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image2.png"></p>
+<p>Array.prototype.slice()方法提取并返回一个新的数组,如果源数组中的元素是个对象的引用,slice会拷贝这个对象的引用到新的数组,来看个例子:</p>
+<p><img alt="alt" class="post-img b-lazy" href="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image3.png" data-src="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image3.png"></p>
+<p>如上例所示,但源数组中的元素是对象引用时,slice拷贝的是这个对象的引用,因此当修改其中一个的值时,两个数组中的值都会发生改变</p>
+<p>除了上述js中自带方法实现的浅拷贝外,我们自己如何简单实现一个浅拷贝呢?来看个例子:</p>
+<p><img alt="alt" class="post-img b-lazy" href="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image4.png" data-src="/2020/09/06/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/js.kaobei.image4.png"></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 深拷贝-多层复制</span></span><br><span class="line">			<span class="keyword">var</span> obj1 = {</span><br><span class="line">				name: <span class="string">'zs'</span>,</span><br><span class="line">				age: <span class="number">18</span>,</span><br><span class="line">				sex: <span class="string">'男'</span>,</span><br><span class="line">				dog: {</span><br><span class="line">					name: <span class="string">'柴犬'</span>,</span><br><span class="line">					age: <span class="number">2</span></span><br><span class="line">				},</span><br><span class="line">				friends: [<span class="string">'ls'</span>, <span class="string">'ww'</span>]</span><br><span class="line">			};</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 深拷贝 把o1的成员拷贝给o2</span></span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">o1, o2</span>) </span>{</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o1) {</span><br><span class="line">					<span class="comment">// key 相当于一个字符串 获取对象o1的属性 从o1.[0]开始</span></span><br><span class="line">					<span class="comment">// 获取属性对应的值</span></span><br><span class="line">					<span class="keyword">var</span> item = o1[key];</span><br><span class="line">					</span><br><span class="line">					<span class="comment">// 如果item是对象呢?</span></span><br><span class="line">					<span class="comment">// var o = {}</span></span><br><span class="line">					<span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">Object</span>) {</span><br><span class="line">						<span class="comment">// var o = {};</span></span><br><span class="line">						o2[key] = {};</span><br><span class="line">						deepCopy(item, o2[key]);</span><br><span class="line">					} <span class="keyword">else</span> <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">Array</span>) {</span><br><span class="line">						<span class="comment">// 如果item是数组呢?</span></span><br><span class="line">						<span class="comment">// var arr = [];</span></span><br><span class="line">						o2[key] = []</span><br><span class="line">						deepCopy(item, o2[key]);</span><br><span class="line">					} <span class="keyword">else</span> {</span><br><span class="line">						<span class="comment">// 如果是简单类型</span></span><br><span class="line">						o2[key] = o1[key];</span><br><span class="line">					}</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">var</span> obj2 = {};</span><br><span class="line">			</span><br><span class="line">			deepCopy(obj1, obj2);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 修改obj1中的成员  是否会影响obj2?</span></span><br><span class="line">			obj1.dog.name = <span class="string">'xxx'</span>;</span><br><span class="line">			obj1.friends[<span class="number">0</span>] = <span class="string">'xx'</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="built_in">console</span>.dir(obj2);</span><br><span class="line">                      <span class="comment">/*age: 18</span></span><br><span class="line"><span class="comment">                      dog: {name: "柴犬", age: 2}</span></span><br><span class="line"><span class="comment">                      friends: {0: "ls", 1: "ww"}</span></span><br><span class="line"><span class="comment">                      name: "zs"</span></span><br><span class="line"><span class="comment">                      sex: "男" */</span></span><br><span class="line">			<span class="built_in">console</span>.dir(obj1);</span><br><span class="line">                      <span class="comment">/* age: 18</span></span><br><span class="line"><span class="comment">                      dog: {name: "xxx", age: 2}</span></span><br><span class="line"><span class="comment">                      friends: (2) ["xx", "ww"]</span></span><br><span class="line"><span class="comment">                      name: "zs"</span></span><br><span class="line"><span class="comment">                      sex: "男"*/</span></span><br></pre></td></tr></tbody></table></figure>
+<p>通过对需要拷贝的对象的属性进行递归遍历,如果对象的属性不是基本类型时,就继续递归,知道遍历到对象属性为基本类型,然后将属性和属性值赋给新对象。</p>
+<h3>总结</h3>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>以上对js深拷贝和浅拷贝做了简单的介绍,在深拷贝的实现上也只介绍了最简单的实现形式,并未考虑复杂情况以及相应优化,想要对深拷贝有更深入的了解,需要大家花时间去深入研究,或者可以关注我后续文章的动态。</p>
 
                 </div>
             </section>
@@ -163,11 +171,11 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="first" href="/2020/05/22/first/">
-            ← first
-        </a>
-        
         <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="querySelector和getElementById方法的区别" href="/2020/06/04/querySelector%E5%92%8CgetElementById%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            querySelector和getElementById方法的区别 →
+        </a>
         
     </nav>
 
@@ -192,7 +200,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">原因及区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">总结</span></a></li></ol>
     </div>
 </div>
 
@@ -330,7 +338,7 @@
         </a>
     </div>
     <span class="floating-header-divider">—</span>
-    <div class="floating-header-title">Hello World</div>
+    <div class="floating-header-title">JavaScript深拷贝与浅拷贝的区别</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
