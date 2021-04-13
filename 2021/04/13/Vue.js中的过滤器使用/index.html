@@ -164,8 +164,7 @@
 <p>局部过滤器的有参和无参的定义和使用方法与全局的过滤器一样。唯一的区别在于局部过滤器是定义在vue的实例中。其作用的区域也是vue实例【#app】控制的区域</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span><br><span class="line">           <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</span><br><span class="line">               el: <span class="string">'#app'</span>,</span><br><span class="line">               data: {</span><br><span class="line">                   msg: <span class="string">'曾经，我也是一个单纯的少年，单纯的我，傻傻的问，谁是世界上最单纯的男人'</span></span><br><span class="line">               },</span><br><span class="line">               methods: {},</span><br><span class="line">               <span class="comment">//定义私用局部过滤器。只能在当前 vue 对象中使用</span></span><br><span class="line">               filters: {</span><br><span class="line">                   <span class="comment">// 定义私有过滤器 过滤器有两个条件 【过滤器名称 和 处理函数】</span></span><br><span class="line">                   <span class="comment">// 过滤器调用的时候，采用的是就近原则 如果私有过滤器和全局过滤器一致 这时候优先调用私有过滤器</span></span><br><span class="line">                   dataFormat(msg) {</span><br><span class="line">                       <span class="keyword">return</span> msg+<span class="string">'xxxxx'</span>;</span><br><span class="line">                   }</span><br><span class="line">               }</span><br><span class="line">           });</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 color="red">注意</h4>
-
+<p><font color="red">注意</font></p>
 <p color="red">1、 当有局部和全局两个名称相同的过滤器时候，会以就近原则进行调用，即：局部过滤器优先于全局过滤器被调用！</p>
 
 <p color="red">2、 一个表达式可以使用多个过滤器。过滤器之间需要用管道符“|”隔开。其执行顺序从左往右</p>
@@ -207,7 +206,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Vue中的过滤器分为两种：局部过滤器和全局过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">1、定义无参全局过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">完整实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">定义有参全局过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">局部过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">注意</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Vue中的过滤器分为两种：局部过滤器和全局过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">1、定义无参全局过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">完整实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">定义有参全局过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">局部过滤器</span></a></li></ol></li></ol>
     </div>
 </div>
 
