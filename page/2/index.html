@@ -137,17 +137,17 @@
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="PowerShell因为在此系统中禁止执行脚本问题的解决方法" href="/2020/05/22/PowerShell%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%A6%81%E6%AD%A2%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+					<a class="post-card-content-link" title="grid布局" href="/2022/07/19/grid%E5%B8%83%E5%B1%80/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
 								
 								| 
 								
-								<time datetime="2020-05-22T08:02:54.609Z" itemprop="datePublished">
-									2020-05-22
+								<time datetime="2022-07-19T03:04:01.661Z" itemprop="datePublished">
+									2022-07-19
 								</time>
 							</span>
-							<h2 class="post-card-title">PowerShell因为在此系统中禁止执行脚本问题的解决方法</h2>
+							<h2 class="post-card-title">grid布局</h2>
 						</header>
 						<section class="post-card-excerpt">
 							<p>
@@ -156,11 +156,12 @@
 								
 								
 								
-								首次在计算机上启动 Windows PowerShell 时，现用执行策略很可能是 Restricted（默认设置）。
-Restricted 执行策略是不允许任何脚本运行。
-AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有数字签名的脚本。
-那么如何运行所选未签名脚本（即使在执行策略为 RemoteSigned 的情况下），如何对脚本进行签名以便您自己使用。
-有关 Windows PowerShell 执行策略的详
+								一、概述
+
+网格布局（Grid）是最强大的 CSS 布局方案。
+它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。上图这样的布局，就是 Grid 布局的拿手好戏。
+Grid 布局与 Flex 布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。
+Flex 布局是轴线布局，只能指定”项目”针对轴线的位置，可以看作是一维布局。Grid 布局则是将容器划分成”行”和”列”
 								...
 							</p>
 						</section>
@@ -177,7 +178,7 @@ AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有
 							</div>
 						</div>
 						<span class="reading-time">
-							1
+							13
 							min read
 						</span>
 					</footer>
@@ -187,14 +188,14 @@ AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="first" href="/2020/05/22/first/">
+					<a class="post-card-content-link" title="first" href="/2022/07/19/first/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
 								
 								| 
 								
-								<time datetime="2020-05-22T05:19:11.360Z" itemprop="datePublished">
-									2020-05-22
+								<time datetime="2022-07-19T03:04:01.653Z" itemprop="datePublished">
+									2022-07-19
 								</time>
 							</span>
 							<h2 class="post-card-title">first</h2>
@@ -234,17 +235,17 @@ AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="Hello World" href="/2020/05/22/hello-world/">
+					<a class="post-card-content-link" title="call、apply、bind的用法" href="/2022/07/19/call%E3%80%81apply%E3%80%81bind%E7%9A%84%E7%94%A8%E6%B3%95/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
 								
 								| 
 								
-								<time datetime="2020-05-22T03:11:57.111Z" itemprop="datePublished">
-									2020-05-22
+								<time datetime="2022-07-19T03:04:01.647Z" itemprop="datePublished">
+									2022-07-19
 								</time>
 							</span>
-							<h2 class="post-card-title">Hello World</h2>
+							<h2 class="post-card-title">call、apply、bind的用法</h2>
 						</header>
 						<section class="post-card-excerpt">
 							<p>
@@ -253,9 +254,11 @@ AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有
 								
 								
 								
-								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My N
-								...
+								call：call 是函数的正常调用方式，并指定上下文 this。apply：apply 的作用和 call 一样，只是在调用的时候，传参数的方式不同。区别是 apply 接受的是数组参数，call 接受的是连续参数。如下代码：
+bind：bind 接受的参数跟 call 一致，只是 bind 不会立即调用，它会生成一个新的函数，你想什么时候调就什么时候调。如下代码：
+
+
+								
 							</p>
 						</section>
 					</a>
@@ -271,7 +274,7 @@ Quick StartCreate a new post1$ hexo new "My N
 							</div>
 						</div>
 						<span class="reading-time">
-							1
+							0
 							min read
 						</span>
 					</footer>
@@ -327,13 +330,13 @@ Quick StartCreate a new post1$ hexo new "My N
       
       
       <li>
-        <a href="/2021/12/28/%E5%9B%9B%E7%A7%8D%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%96%B9%E6%B3%95%E5%8C%BA%E5%88%AB/">四种数组循环方法区别</a>
+        <a href="/2022/07/19/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">数组方法</a>
       </li>
       
       
       
       <li>
-        <a href="/2021/12/24/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">数组方法</a>
+        <a href="/2022/07/19/%E5%9B%9B%E7%A7%8D%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%96%B9%E6%B3%95%E5%8C%BA%E5%88%AB/">四种数组循环方法区别</a>
       </li>
       
       

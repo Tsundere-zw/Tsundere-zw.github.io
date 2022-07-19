@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>测试 | WeiGe</title>
+	<title>JavaScript中var、let和constd 区别 | WeiGe</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -40,14 +40,14 @@
 
 	<meta property="og:site_name" content="WeiGe">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="测试 | WeiGe">
+	<meta property="og:title" content="JavaScript中var、let和constd 区别 | WeiGe">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/2022/07/19/%E6%B5%8B%E8%AF%95/">
+	<meta property="og:url" content="http://yoursite.com/2022/07/19/JavaScript%E4%B8%ADvar%E3%80%81let%E5%92%8Cconstd%20%E5%8C%BA%E5%88%AB/">
 
 	
-	<meta property="article:published_time" content="2022-07-19T11:07:76+08:00"> 
+	<meta property="article:published_time" content="2022-07-19T11:07:67+08:00"> 
 	<meta property="article:author" content="John Wei">
-	<meta property="article:published_first" content="WeiGe, /2022/07/19/%E6%B5%8B%E8%AF%95/">
+	<meta property="article:published_first" content="WeiGe, /2022/07/19/JavaScript%E4%B8%ADvar%E3%80%81let%E5%92%8Cconstd%20%E5%8C%BA%E5%88%AB/">
 	
 </head>
 <body class="post-template">
@@ -126,7 +126,7 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2022-07-19T03:06:06.767Z" itemprop="datePublished">
+                <time class="post-full-meta-date" datetime="2022-07-19T03:04:01.675Z" itemprop="datePublished">
                     2022-07-19
                 </time>
                 
@@ -134,13 +134,64 @@
                 
                 
             </section>
-            <h1 class="post-full-title">测试</h1>
+            <h1 class="post-full-title">JavaScript中var、let和constd 区别</h1>
         </header>
         <article class="post-full no-image">
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>html篇<br>1.行内元素有哪些，块级元素有哪些，行内块级元素有哪些？<br>答：行内元素：a span em strong b i u lable br<br>    块级元素: div p ul ol lo dl dt dd h1-h6 form table<br>    行内块元素: img input textarea button<br>    区别：行内元素可以多个标签存在一行 对宽高属性值不生效，完全靠内容撑开宽高，块级元素独占一行，对宽高属性值生效，行内块元素对宽高生效，并且可以多个标签存在一行</p>
+                    <h3>一、前言</h3>
+
+<p>在ES6（ES2015）出现之前，JavaScript中声明变量只能通过var关键字，函数的声明是通过function关键字，而在ES6之后，声明的方式有var、let、const、function、class，本文主要讨论var、let、和const之间的区别</p>
+<h3>二、var</h3>
+如果使用关键字var声明一个变量，那么这个变量就属于当前的函数作用域，如果声明是发生在任何函数外的顶层声明，那么这个变量就属于全局作用域。举例说明：
+
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;  <span class="comment">//此处声明的变量a为去全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> a  = <span class="number">2</span>  <span class="comment">//此处声明的变量a为函数foo的局部变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">//2</span></span><br><span class="line">}</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果在声明变量时，省略var的话，该变量就会变成全局变量，如全局作用域中存在该变量，就会更新其值。如：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;  <span class="comment">//此处声明的变量a为全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">    a = <span class="number">2</span>;  <span class="comment">//此处的变量a也是全局变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(a)  <span class="comment">//2</span></span><br><span class="line">}</span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(a)  <span class="comment">//2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意：var声明的变量存在提升（hoisting）。</p>
+<h3>三、提升</h3>
+
+<p>提升是指无论var出现在一个作用域的哪个位置，这个声明都属于当前的整个作用域，在其中到处都可以访问到。注意只有变量声明才会提升，对变量赋值并不会提升。如下例所示：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a)  <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>该代码跟下列代码是一样的逻辑：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//undefined</span></span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>而如果对未声明过的变量进行操作，就会报错</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//假设b未声明过，Uncaught ReferenceError: b is not defined</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3>四、let</h3>
+
+<p>let声明的变量，具有如下几个特点：<br>    1.let声明的变量具有块作用域的特征。<br>    2.在同一个块级作用域，不能重复声明变量。<br>    3.let声明的变量不存在变量提升，换一种说法，就是let声明存在暂时性死区（TDZ）。</p>
+<p>如下面几个例子所示</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//Uncaught ReferenceError: b is not defined</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">2</span>;  <span class="comment">//Uncaught SyntaxError: Identifier 'a' has alrealy been declared</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以下是一个经典的关于var和let的一个例子：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i < <span class="number">10</span>; i++) {</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    },<span class="number">100</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>则该代码运行后，就会在控制台打印出10个10.若修改为：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i < <span class="number">10</span>; i++) {</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    },<span class="number">100</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>则该代码运行后，就会在控制台打印出0-9.</p>
+<h3>五、const</h3>
+
+<p>const声明方式，除了具有let的上述特点外，其还具备一个特点，即const定义的变量，一旦定义后，就不能修改，即const声明的为常量。</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>但是，并不是说const声明的变量其内部内容不可变，如：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = {</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span></span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.log(obj.a); <span class="comment">//1</span></span><br><span class="line">obj.a = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.a); <span class="comment">//3</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>所以准确的说，是const声明创建一个值的只读引用。但这并不意味着它所持有的值是不可变的，只是变量标识符不能重新分配。</p>
+<h3>六、总结</h3>
+    1.var声明的变量属于函数作用域，let和const声明的变量属于块级作用域；
+    2.var存在变量提升现象，而let和const没有此类现象；
+    3.var变量可以重复声明，而在同一个块级作用域，let变量不能重新声明，const变量不能修改。
 
                 </div>
             </section>
@@ -151,10 +202,14 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
         
+        <a class="prev-post" title="JavaScript深拷贝与浅拷贝的区别" href="/2022/07/19/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            ← JavaScript深拷贝与浅拷贝的区别
+        </a>
+        
         <span class="prev-next-post">•</span>
         
-        <a class="next-post" title="数组方法" href="/2022/07/19/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">
-            数组方法 →
+        <a class="next-post" title="Hello World" href="/2022/07/19/hello-world/">
+            Hello World →
         </a>
         
     </nav>
@@ -180,7 +235,7 @@
         </a>
     </div>
     <div class="toc-main">
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">二、var</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">三、提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">四、let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">五、const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">六、总结</span></a></li></ol>
     </div>
 </div>
 
@@ -330,7 +385,7 @@
         </a>
     </div>
     <span class="floating-header-divider">—</span>
-    <div class="floating-header-title">测试</div>
+    <div class="floating-header-title">JavaScript中var、let和constd 区别</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>

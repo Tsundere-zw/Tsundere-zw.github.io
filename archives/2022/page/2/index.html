@@ -42,7 +42,7 @@
 	<meta property="og:type" content="blog">
 	<meta property="og:title" content="Archives | WeiGe">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/archives/2022/index.html">
+	<meta property="og:url" content="http://yoursite.com/archives/2022/page/2/index.html">
 
 	
 </head>
@@ -137,17 +137,17 @@
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="测试" href="/2022/07/19/%E6%B5%8B%E8%AF%95/">
+					<a class="post-card-content-link" title="grid布局" href="/2022/07/19/grid%E5%B8%83%E5%B1%80/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
 								
 								| 
 								
-								<time datetime="2022-07-19T03:06:06.767Z" itemprop="datePublished">
+								<time datetime="2022-07-19T03:04:01.661Z" itemprop="datePublished">
 									2022-07-19
 								</time>
 							</span>
-							<h2 class="post-card-title">测试</h2>
+							<h2 class="post-card-title">grid布局</h2>
 						</header>
 						<section class="post-card-excerpt">
 							<p>
@@ -156,8 +156,60 @@
 								
 								
 								
-								html篇1.行内元素有哪些，块级元素有哪些，行内块级元素有哪些？答：行内元素：a span em strong b i u lable br    块级元素: div p ul ol lo dl dt dd h1-h6 form table    行内块元素: img input textarea button    区别：行内元素可以多个标签存在一行 对宽高属性值不生效，完全靠内容撑开宽高，块级元素独占一行，对宽高属性值生效，行内块元素对宽高生效，并且可以多个标签存在一行
+								一、概述
+
+网格布局（Grid）是最强大的 CSS 布局方案。
+它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。上图这样的布局，就是 Grid 布局的拿手好戏。
+Grid 布局与 Flex 布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。
+Flex 布局是轴线布局，只能指定”项目”针对轴线的位置，可以看作是一维布局。Grid 布局则是将容器划分成”行”和”列”
 								...
+							</p>
+						</section>
+					</a>
+					<footer class="post-card-meta">
+						<div class="author-list">
+							<div class="author-list-item">
+								<div class="author-name-tooltip">John Wei</div>
+								
+								<a href="/about" class="static-avatar">
+									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
+								</a>
+								
+							</div>
+						</div>
+						<span class="reading-time">
+							13
+							min read
+						</span>
+					</footer>
+				</div>
+			</article>
+			
+			<article class="post-card post  no-image ">
+				
+				<div class="post-card-content">
+					<a class="post-card-content-link" title="first" href="/2022/07/19/first/">
+						<header class="post-card-header">
+							<span class="post-card-tags">
+								
+								| 
+								
+								<time datetime="2022-07-19T03:04:01.653Z" itemprop="datePublished">
+									2022-07-19
+								</time>
+							</span>
+							<h2 class="post-card-title">first</h2>
+						</header>
+						<section class="post-card-excerpt">
+							<p>
+								
+								
+								
+								
+								
+								title: this is my first blog
+
+								
 							</p>
 						</section>
 					</a>
@@ -183,17 +235,17 @@
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="数组方法" href="/2022/07/19/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">
+					<a class="post-card-content-link" title="call、apply、bind的用法" href="/2022/07/19/call%E3%80%81apply%E3%80%81bind%E7%9A%84%E7%94%A8%E6%B3%95/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
 								
 								| 
 								
-								<time datetime="2022-07-19T03:04:01.723Z" itemprop="datePublished">
+								<time datetime="2022-07-19T03:04:01.647Z" itemprop="datePublished">
 									2022-07-19
 								</time>
 							</span>
-							<h2 class="post-card-title">数组方法</h2>
+							<h2 class="post-card-title">call、apply、bind的用法</h2>
 						</header>
 						<section class="post-card-excerpt">
 							<p>
@@ -202,18 +254,11 @@
 								
 								
 								
-								pop shift   数组删除操作 
-push unshift 数组添加操作
-splice 添加新项  删除元素
-slice 切割数组  原数组不变
-toString 
-sort 结合 a-b 排序
-Math.max.apply 最大值
-123function maxArray(arr) {		return Math.max.apply(null, arr)	}
+								call：call 是函数的正常调用方式，并指定上下文 this。apply：apply 的作用和 call 一样，只是在调用的时候，传参数的方式不同。区别是 apply 接受的是数组参数，call 接受的是连续参数。如下代码：
+bind：bind 接受的参数跟 call 一致，只是 bind 不会立即调用，它会生成一个新的函数，你想什么时候调就什么时候调。如下代码：
 
-Math.min.apply 最小值
-123function maxArray(arr) 
-								...
+
+								
 							</p>
 						</section>
 					</a>
@@ -229,403 +274,7 @@ Math.min.apply 最小值
 							</div>
 						</div>
 						<span class="reading-time">
-							5
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="四种数组循环方法区别" href="/2022/07/19/%E5%9B%9B%E7%A7%8D%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%96%B9%E6%B3%95%E5%8C%BA%E5%88%AB/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.715Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">四种数组循环方法区别</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								四种数组循环方法的区别
-一. 基础for循环 遍历数组
-1234let list = [1, 2, 3, 5, 4, 6]for (let i = 0, len = list.length; i < len; i++) {  console.log(list[i])  // 1,2,3,5,4,6}
-
-
-
-二.forEach循环 遍历数组 
-​    forEach循环我们可以直接取到元素，foreach不会改变数组，同时也可以取到index值。但是
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							4
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="前端面试" href="/2022/07/19/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.708Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">前端面试</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								html篇1.行内元素有哪些，块级元素有哪些，行内块级元素有哪些？答：行内元素：a span em strong b i u lable br    块级元素: div p ul ol lo dl dt dd h1-h6 form table    行内块元素: img input textarea button    区别：行内元素可以多个标签存在一行 对宽高属性值不生效，完全靠内容撑开宽高，块级元素独占一行，对宽高属性值生效，行内块元素对宽高生效，并且可以多个标签存在一行
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							3
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="Vue.js中的过滤器使用" href="/2022/07/19/Vue.js%E4%B8%AD%E7%9A%84%E8%BF%87%E6%BB%A4%E5%99%A8%E4%BD%BF%E7%94%A8/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.701Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">Vue.js中的过滤器使用</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								Vue中的过滤器分为两种：局部过滤器和全局过滤器
-
-1、定义无参全局过滤器
-
-123Vue.filter('msgFormat', function(msg) {    // msg 为固定的参数 即是你需要过滤的数据           return msg.replace(/单纯/g, 'xxx') // xxx 为全局单纯替换的东西      })
-
-完整实例
-
-123<div id="app">            <p>
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							3
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="querySelector和getElementById方法的区别" href="/2022/07/19/querySelector%E5%92%8CgetElementById%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.695Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">querySelector和getElementById方法的区别</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								发现querySelector()是用于接收一个CSS选择符，返回与该模式匹配的第一个元素；querySelectorAll()用于选择匹配到的所有元素。完了看到这我就有点懵，所以这俩有什么用呢？不是已经有了getElementById()和getElementsByTagName()了吗，这两个新添加的选择符API意义何在？查了《高程》并没有找到答案，最后还是百度了一堆资料，终于算是搞懂了。简单的说，query选择符选出来的元素及元素数组是静态的，而getElement这种
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							1
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="PowerShell因为在此系统中禁止执行脚本问题的解决方法" href="/2022/07/19/PowerShell%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%A6%81%E6%AD%A2%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.688Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">PowerShell因为在此系统中禁止执行脚本问题的解决方法</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								首次在计算机上启动 Windows PowerShell 时，现用执行策略很可能是 Restricted（默认设置）。
-Restricted 执行策略是不允许任何脚本运行。
-AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有数字签名的脚本。
-那么如何运行所选未签名脚本（即使在执行策略为 RemoteSigned 的情况下），如何对脚本进行签名以便您自己使用。
-有关 Windows PowerShell 执行策略的详
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							1
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="JavaScript深拷贝与浅拷贝的区别" href="/2022/07/19/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.682Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">JavaScript深拷贝与浅拷贝的区别</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								原因及区别
-
-我们都知道js中有两种数据类型,一种是基本数据类型,一种是引用数据类型,基本数据类型是按值访问的,即在操作基本类型的变量时,是直接修改变量的值,而引用数据类型的值是按引用访问的,什么叫按引用访问的呢?js的引用类型,也叫对象类型,是保存在内存中的,而在js中又无法直接操作内存中的对象,实际上操作的是对象的引用,因此在引用类型变量在进行复制操作时,并不是对对象值的直接复制,而是将对象的引用复制给了另一个变量,实际上变量指向的是同一个内存地址中对象的值,因此只要改变
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							7
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="JavaScript中var、let和constd 区别" href="/2022/07/19/JavaScript%E4%B8%ADvar%E3%80%81let%E5%92%8Cconstd%20%E5%8C%BA%E5%88%AB/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.675Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">JavaScript中var、let和constd 区别</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								一、前言
-
-在ES6（ES2015）出现之前，JavaScript中声明变量只能通过var关键字，函数的声明是通过function关键字，而在ES6之后，声明的方式有var、let、const、function、class，本文主要讨论var、let、和const之间的区别
-二、var
-如果使用关键字var声明一个变量，那么这个变量就属于当前的函数作用域，如果声明是发生在任何函数外的顶层声明，那么这个变量就属于全局作用域。举例说明：
-
-1234567var a = 1;  /
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							4
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="Hello World" href="/2022/07/19/hello-world/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								| 
-								
-								<time datetime="2022-07-19T03:04:01.668Z" itemprop="datePublished">
-									2022-07-19
-								</time>
-							</span>
-							<h2 class="post-card-title">Hello World</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My N
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">John Wei</div>
-								
-								<a href="/about" class="static-avatar">
-									<img class="author-profile-image" src="https://mubai.oss-cn-hangzhou.aliyuncs.com/author.png" alt="John Wei">
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							1
+							0
 							min read
 						</span>
 					</footer>
@@ -640,7 +289,7 @@ Quick StartCreate a new post1$ hexo new "My N
 	<nav class="pagination">
 		
 		<nav class="page-nav">
-			<span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next →</a>
+			<a class="extend prev" rel="prev" href="/archives/2022/">← Prev</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
 		</nav>
 		
 	</nav>
